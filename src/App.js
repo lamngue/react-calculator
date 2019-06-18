@@ -14,12 +14,12 @@ class App extends React.Component {
   }
   calculate(n1, operator, n2) {
     if (n2 === null) return n1;
-    const firstNumber = parseFloat(n1);
-    const secondNumber = parseFloat(n2);
+    const firstNumber = parseInt(n1);
+    const secondNumber = parseInt(n2);
     if (operator === '+') return firstNumber + secondNumber;
     if (operator === '-') return firstNumber - secondNumber;
     if (operator === '*') return firstNumber * secondNumber;
-    if (operator === '/') return firstNumber / secondNumber;
+    if (operator === '/') return parseInt(firstNumber / secondNumber);
   }
   //lay so hang chuc, hang tram...
   giveDigits(arr) {
@@ -77,6 +77,7 @@ class App extends React.Component {
         this.inputs[0] = this.inputs[0].split("");
       }
       this.inputs[0].pop();
+      console.log(this.inputs)
       this.phepTinh.pop();
       this.setState({ result: this.state.result.toString().split("").slice(0, -1).join("") });
     }
