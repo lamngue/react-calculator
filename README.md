@@ -1,4 +1,4 @@
-A simple calculator app that calculates integers (no float numbers supported yet). The calculations steps are similar to what found in mobile's calculator.
+A simple calculator app that calculates integers (no float numbers supported yet) not using eval() method in Javascript. The calculations steps are similar to what found in mobile's calculator.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
