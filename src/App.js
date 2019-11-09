@@ -35,9 +35,9 @@ class App extends React.Component {
     const newInputName = e.target.name;
     const newInputValue = e.target.value;
     this.inputs.push(newInputValue);
-    //neu input la so
+    //if input is number
     if (numbers.includes(newInputName)) {
-      //neu input trc do la phep tinh thi clear man hinh
+      //if input before that is operator then clear screen
       if (operatorsSymbols.includes(this.inputs[this.inputs.length - 2])) {
         this.setState({ result: '' });
         this.setState(prevState => ({ result: prevState.result + newInputValue }));
@@ -46,7 +46,6 @@ class App extends React.Component {
         this.setState(prevState => ({ result: prevState.result + newInputValue }));
       }
     }
-    //neu input la dau bang
     else if (newInputName === "equal") {
       const numbersInput = this.giveDigits(this.inputs);
       const result = this.calculate(numbersInput[0], this.phepTinh[0], numbersInput[1]);
@@ -55,7 +54,7 @@ class App extends React.Component {
       this.inputs = [];
       this.inputs[0] = result;
     }
-    //neu input la phep tinh
+    //if input is operator
     else if (operators.includes(newInputName)) {
       const numbersInput = this.giveDigits(this.inputs);
       this.phepTinh.push(newInputValue);
